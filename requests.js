@@ -11,17 +11,17 @@ const instance = axios.create({
 
 export default {
     methods: {
-        get(route) {
-            return this._sendRequest(instance.get(route));
+        get(route, queryParameters = null) {
+            return this._sendRequest(instance.get(route, { params: queryParameters, }));
         },
-        post(route, parameters) {
-            return this._sendRequest(instance.post(route, parameters));
+        post(route, parameters, queryParameters = null) {
+            return this._sendRequest(instance.post(route, parameters, { params: queryParameters }));
         },
-        put(route, parameters) {
-            return this._sendRequest(instance.put(route, parameters));
+        put(route, parameters, queryParameters = null) {
+            return this._sendRequest(instance.put(route, parameters, { params: queryParameters }));
         },
-        delete(route, parameters) {
-            return this._sendRequest(instance.delete(route, parameters));
+        delete(route, parameters, queryParameters = null) {
+            return this._sendRequest(instance.delete(route, parameters, { params: queryParameters }));
         },
         _sendRequest(request) {
             return new Promise((resolve, reject) => {
