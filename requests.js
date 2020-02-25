@@ -49,6 +49,7 @@ export default {
           this.error( messages.join(', ') );
           break;
         default:
+          error.message = error.response.data.message;
           reject(error);
           break;
       }
