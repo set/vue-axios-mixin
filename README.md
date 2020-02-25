@@ -21,4 +21,4 @@ this.post('users', request).then(response => {
 });
 ```
 
-`this.success` and `this.error` is my notification mixins. Please configure it for your architecture.
+`this.success` and `this.error` are my notification mixins. Please configure it for your architecture.
